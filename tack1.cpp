@@ -51,12 +51,6 @@ public:
         logFile.open(filename, ios::app);
     }
 
-    ~Logger() {
-        if (logFile.is_open()) {
-            logFile.close();
-        }
-    }
-
     void Log(const string& message) {
         if (logFile.is_open()) {
             time_t currentTime = time(nullptr);
